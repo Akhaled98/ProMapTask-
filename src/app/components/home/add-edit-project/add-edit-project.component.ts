@@ -39,7 +39,7 @@ export class AddEditProjectComponent implements OnInit, OnChanges {
       projectUrl: new FormControl(null, [Validators.required,Validators.pattern('^https://[a-z .]*[0-9]*')])
     });
   }
-  // ,Validators.pattern("^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$")
+ 
 
   addEditProject() {
     const newEditedProject: Project = {

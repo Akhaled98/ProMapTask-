@@ -1,28 +1,22 @@
 {
-    "projects": [{
-            "id": 3,
-            "projectName": "Pharmacy Project",
-            "projectDate": "2021-10-13",
-            "description": "Exellent",
-            "projectUrl": "https://www.pharmacy.com"
-        },
-        {
-            "id": 4,
-            "projectName": "Car Washing Project",
-            "projectDate": "2021-10-07",
-            "description": "Good",
-            "projectUrl": "https://www.carwashing.com"
-        },
-        {
-            "id": 5,
-            "projectName": "Clinic Project",
-            "projectDate": "2021-10-06",
-            "description": "Bad",
-            "projectUrl": "https://www.clinic.com"
-        }
-    ],
-    "comments": [],
-    "profile": {
-        "name": "typicode"
+  "projects": [
+    {
+      "id": 4,
+      "projectName": "Car Washing Project",
+      "projectDate": "2021-10-07",
+      "description": "Good",
+      "projectUrl": "https://www.carwashing.com"
+    },
+    {
+      "projectName": "Cafe Project",
+      "projectDate": "2021-10-12",
+      "description": "Good",
+      "projectUrl": "https://www.cafe.com",
+      "id": 6
     }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
 }
