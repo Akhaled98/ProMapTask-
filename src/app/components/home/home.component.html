@@ -1,0 +1,12 @@
+<div class="d-flex justify-content-between mt-2 ">
+    <div class="content1 m-4">
+        <h1 class="font-weight-bolder">Project Hub</h1>
+    </div>
+    <div class="content2 m-4">
+        <button type="button" class="btn btn-outline-info p-3 " data-toggle="modal" data-target="#addEditModal" (click)="addProject()">ADD Project</button>
+    </div>
+</div>
+
+<app-projects-list [projectList]="projectList" (actionEventEmitter)="updateProject($event)"></app-projects-list>
+
+<app-add-edit-project [project]="currentProject" (addEditEventEmitter)="applyAddEdit($event)"></app-add-edit-project>

@@ -1,0 +1,31 @@
+<div class="container ">
+    <div class="row" *ngIf="projectList.length>=1; else empty">
+        <div *ngFor='let project of projectList' class="col-md-6 ">
+            <div class="project  position-relative  d-flex justify-content-center">
+                <div class="card my-5 bg-transparent brdr" style="width: 100%;">
+                    <div class="card-body ">
+                        <h2 class="card-title text-center font-weight-bolder ">{{project.projectName}}</h2>
+                        <div class="brdr-b my-4"></div>
+                        <h3 class="  font-weight-bolder h4">Date : {{project.projectDate}} </h3>
+                        <h3 class="font-weight-bolder h4">Description : {{project.description}} </h3>
+                        <h3 class="font-weight-bolder h4">URL : {{project.projectUrl}}</h3>
+                        <div class=" d-flex justify-content-between py-3 ">
+                            <button type="button " class="btn btn-outline-info p-3 " data-toggle="modal " data-target="#addEditModal " (click)="updateProject(project) ">Update Project</button>
+                            <button class=" btn btn-outline-info p-3 " (click)="deleteProject(project) ">DeleteProject</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #empty>
+    <div class="container ">
+        <div class="row justify-content-center align-items-center ">
+            <div class="content m-5 p-5 ">
+                <h1>No Projects</h1>
+            </div>
+        </div>
+    </div>
+</ng-template>

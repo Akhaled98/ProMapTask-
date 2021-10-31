@@ -1,0 +1,16 @@
+.brdr {
+    border: solid 2px #24baef;
+    border-radius: 5px;
+}
+
+.brdr-b {
+    width: 25%;
+    height: 1px;
+    border: solid 1px #24baef;
+    margin: auto;
+    transition: width 250ms ease-in;
+}
+
+.card-body:hover .brdr-b {
+    width: 50%;
+}

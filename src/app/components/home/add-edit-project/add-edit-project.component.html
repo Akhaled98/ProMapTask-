@@ -1,0 +1,58 @@
+<div class=" modal fade " id="addEditModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class=" modal-dialog  ">
+        <div class=" modal-content bg-dark ">
+            <div class=" modal-header bg-primary">
+                <h5 class=" modal-title " id=" exampleModalLabel ">Add / Edit Project</h5>
+                <button type=" button" class=" close" data-dismiss="modal" aria-label=" Close" (click)="resetForm()">
+          <span aria-hidden=" true ">&times;</span>
+        </button>
+            </div>
+            <div class=" modal-body ">
+                <form [formGroup]='projectForm'>
+                    <div class="form-group">
+                        <label for="projectName">Project Name :</label>
+                        <input formControlName='projectName' type="text" class="form-control" id="projectName" [value]="project.projectName">
+                        <div *ngIf="projectForm.get('projectName')?.errors != null && projectForm.get('projectName')?.touched " class="alert alert-danger my-2">
+                            <p *ngIf="projectForm.get('projectName')?.errors?.required">project Name is required</p>
+                            <p *ngIf="projectForm.get('projectName')?.errors?.minlength">project Name is minLength 3</p>
+                            <p *ngIf="projectForm.get('projectName')?.errors?.maxlength">project Name is maxLength 20
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="projectDate">project Date :</label>
+                        <input formControlName='projectDate' type="date" class="form-control" id="projectDate" [value]="project.projectDate">
+                        <div *ngIf=" projectForm.get( 'projectDate')?.errors !=null && projectForm.get( 'projectDate')?.touched " class="alert alert-danger my-2 ">
+                            <p *ngIf="projectForm.get( 'projectDate')?.errors?.required ">project Date is required</p>;
+                        </div>
+                    </div>
+
+                    <div class="form-group ">
+                        <label for="description ">project Description :</label>
+                        <input formControlName='description' type="text " class="form-control " id="description " [value]="project.description">
+                        <div *ngIf="projectForm.get( 'description')?.errors !=null && projectForm.get( 'description')?.touched " class="alert alert-danger my-2 ">
+                            <p *ngIf="projectForm.get( 'description')?.errors?.required ">project Description is required
+                            </p>
+                            <p *ngIf="projectForm.get( 'description')?.errors?.minlength ">project Description is minLength 3</p>
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                        <label>project URL :</label>
+                        <input formControlName='projectUrl' type="text " class="form-control " id="projectUrl " [value]="project.projectUrl">
+                        <div *ngIf="projectForm.get( 'projectUrl')?.errors !=null && projectForm.get('projectUrl')?.touched " class="alert alert-danger my-2 ">
+                            <p *ngIf="projectForm.get( 'projectUrl')?.errors?.required ">project URL is required</p>
+                            <p *ngIf="projectForm.get( 'projectUrl')?.errors?.pattern ">project URL is Not Matching</p>
+
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between py-2">
+                        <button type="button " class="btn btn-outline-info p-2" data-dismiss="modal" (click)="resetForm()" #close>Close</button>
+                        <button [disabled]='projectForm.invalid' class="p-2 btn btn-outline-info" type="button " (click)="addEditProject()">Save</button>
+
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
